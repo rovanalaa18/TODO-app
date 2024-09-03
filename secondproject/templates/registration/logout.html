@@ -1,0 +1,20 @@
+{% extends "main/components/base.html" %}
+
+{% block title %}
+logged Out 
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size: 1.20rem; padding: 1.5rem; width: 100%;">
+        <strong>Logged Out!</strong> You have been successfully logged out !!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <a href="{% url 'start' %}">login / signup</a>
+</div> 
+{% endblock %}
+
+
+

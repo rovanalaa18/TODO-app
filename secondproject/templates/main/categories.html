@@ -1,0 +1,37 @@
+{% extends "main/components/base.html" %}
+
+{% block title %}
+    {{ task.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <ul class="list-group">
+        {% for task in tasks %}
+        {% if task.status == 'pending' %}
+        <li class="list-group-item list-group-item-danger subtle d-flex justify-content-between align-items-center p-4">
+            {{ task.title }}
+            <h3 class="badge text-bg-primary rounded-pill p-3">{{ task.status }}</h3>
+        </li>
+        {% elif task.status == 'in progress' %}
+        <li class="list-group-item list-group-item-primary subtle d-flex justify-content-between align-items-center p-4">
+            {{ task.title }}
+            <h3 class="badge text-bg-primary rounded-pill p-3">{{ task.status }}</h3>
+        </li>
+        {% else %}
+        <li class="list-group-item list-group-item-success subtle d-flex justify-content-between align-items-center p-4">
+            {{ task.title }}
+            <h3 class="badge text-bg-primary rounded-pill p-3">{{ task.status }}</h3>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+

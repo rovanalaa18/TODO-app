@@ -1,0 +1,56 @@
+{% extends "main/components/base.html" %}
+
+{% block title %}
+status-todos-Page 
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4 me-5">
+    <div class="row justify-content-center g-3">
+        {% for task in todos %}
+        {% if task.status == 'pending' %}
+        <div class="col-5">
+            <div class="card bg-danger-subtle text-danger" style="max-width: 18rem;">
+                <div class="card-header fw-bold" style="font-size: 1.25rem;">{{ task.title }}</div>
+                <div class="card-body">
+                    <p class="card-text">{{ task.description }}</p>
+                    <a href="{%url 't_details' task.title%}" class="btn btn-danger text-white">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% elif task.status == 'in progress' %}
+        <div class="col-6">
+            <div class="card bg-primary-subtle text-primary" style="max-width: 18rem;">
+                <div class="card-header fw-bold" style="font-size: 1.25rem;">{{ task.title }}</div>
+                <div class="card-body">
+                    <p class="card-text">{{ task.description }}</p>
+                    <a href="{%url 't_details' task.title%}" class="btn btn-primary text-white">View Details</a>
+
+                </div>
+            </div>
+        </div>
+      {%else%}
+      <div class="col-7">
+        <div class="card bg-success-subtle text-success" style="max-width: 18rem;">
+          <div class="card-header fw-bold" style="font-size: 1.25rem;">{{ task.title }}</div>
+          <div class="card-body">
+            <p class="card-text">{{ task.description }}</p>
+            <a href="{%url 't_details' task.title%}" class="btn btn-success text-white">View Details</a>
+          </div>
+        </div>
+    </div>
+
+        {% endif%}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+      
+  
+
+
+
+

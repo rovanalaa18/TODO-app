@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+       
+      <a class="navbar-brand" href="#">My Manager</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'status' 'pending'%}">pending Todos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'status' 'in progress'%}">in progress Todos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'status' 'completed'%}">completed Todos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="{%url 'status' 'pending'%}">pending</a></li>
+              <li><a class="nav-link" href="{%url 'status' 'in progress'%}">in progress</a></li>
+              <a class="nav-link" href="{%url 'status' 'completed'%}">completed</a></li>
+            </ul>
+          </li>
+          <li class="nav-item me-3">
+            <a href="{%url 'createtodo'%}" class="btn btn-outline-secondary">create new Todo</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="{%url 'createcategory'%}" class="btn btn-outline-secondary">create new category</a>
+          </li>
+        </ul>
+        
+      </div>
+      <a href="#" class="btn btn-outline-secondary me-4" data-bs-toggle="modal" data-bs-target="#confirmLogoutModal">Logout</a>
+<div class="modal fade" id="confirmLogoutModal" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="confirmLogoutModalLabel">Confirm Logout</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              Are you sure you want to log out?
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+          </div>
+      </div>
+  </div>
+</div>
+    </div>
+  </nav>

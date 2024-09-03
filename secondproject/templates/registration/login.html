@@ -1,0 +1,26 @@
+{% extends "main/components/base.html" %}
+
+{% block title %}
+login page 
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center vh-80 mt-5">
+    <div class="w-100" style="max-width: 500px;">
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            {{ form.username }}
+            <label for="floatingUsername">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+            {{ form.password }}
+            <label for="floatingPassword">Password</label>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+</div>
+</div>
+{% endblock %}
+

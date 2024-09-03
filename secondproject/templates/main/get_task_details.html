@@ -1,0 +1,30 @@
+{% extends "main/components/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ task.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+<div class="card border-warning  m-5" style="max-width: 60rem; ">
+  <div class="card-header " style="font-weight: bold; color:black ; font-size: 1.5rem;">{{ task.title }}</div>
+  <div class="card-body">
+    <p class="card-text" style="font-family: 'Arial', sans-serif;">
+      <h5 style="font-family: 'cursive', cursive;">📌 The task is : {{ task.title }}</h5>
+      <h5 style="font-family: 'cursive', cursive;">📂 The task belongs to category : {{ task.category.name }}</h5>
+      <h5 style="font-family: 'cursive', cursive;">📝 The description : {{ task.description }}</h5>
+      <h5 style="font-family: 'cursive', cursive;">⏳ The task status : {{ task.status }}</h5>
+      <h5 style="font-family: 'cursive', cursive;">🚨 The task priority : {{ task.priority }}</h5>
+      <h5 style="font-family: 'cursive', cursive;">⌚️The due date : {{ task.due_date }}</h5>
+      <p class="card-text"><small class="text-body-secondary"> created at :{{ task.created_date }}</small></p>
+      <p class="card-text"><small class="text-body-secondary"> last update :{{ task.updated_date }}</small></p>
+    </p>
+  </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+
